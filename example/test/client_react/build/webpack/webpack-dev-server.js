@@ -17,4 +17,4 @@ const devScript = function (devConf) {
     console.log(`http://${devConf.devServer.host}:${devConf.devServer.port}`);
 };
 
-module.exports = devScript
+module.exports = devScript;

@@ -4,7 +4,7 @@ const package = require("../package.json");
 const nameAndVersion = `${package.name} V${package.version}`;
 
 figletText({ text: nameAndVersion });
-const { ENV } = constants
+const { ENV } = constants;
 
 switch (getArg(ENV)) {
     case "dev":

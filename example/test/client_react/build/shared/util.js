@@ -19,33 +19,31 @@ const join = function (dirs) {
 };
 
 const figletText = ({ text, clearState, color }) => {
-    clearState = clearState || true;
+    clearState = clearState || false;
     color = color || "green";
     clearState && clear();
     console.log(chalk[color](figlet.textSync(text, { horizontalLayout: "full" })));
+    console.log('\n')
 };
 
 const successText = (text) => {
-  console.log(
-    chalk.green(text)
-  )
-}
+    console.log(chalk.green(text));
+};
 
 const warningText = (text) => {
-  console.log(
-    chalk.yellow(text)
-  )
-}
+    console.log(chalk.yellow(text));
+};
 
 const blueText = (text) => {
-  console.log(
-    chalk.blue(text)
-  )
-}
+    console.log(chalk.blue(text));
+};
 
 const getArg = (str) => {
     const arg = Array.from(process.argv);
     const envIndex = arg.indexOf(str);
+    if (envIndex === -1) {
+        return;
+    }
     const env = arg[envIndex + 1];
     return env;
 };
@@ -58,5 +56,5 @@ module.exports = {
     getArg,
     successText,
     warningText,
-    blueText
+    blueText,
 };

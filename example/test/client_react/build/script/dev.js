@@ -3,8 +3,8 @@
  * @author jamesjianpeng
  */
 const { merge } = require("webpack-merge");
-const { devConf, devScript } = require('../webpack')
+const { devConf, devScript } = require("../webpack");
 
 const dev = () => devScript(devConf);
 
-module.exports = dev
+module.exports = dev;
