@@ -1,0 +1,4 @@
+{
+    "WESURE_ENV": "dev",
+    "WESURE_URL": "http://localhost:3400"
+}

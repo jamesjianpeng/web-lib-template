@@ -1,0 +1,8 @@
+# Ignore artifacts:
+/.vscode
+/node_moudles
+/LICENSE
+/README.md
+/.gitignore
+/.npmignore
+/package-lock.json
