@@ -1,1 +1,1 @@
-declare module "*.bmp"
+declare module "*.bmp";

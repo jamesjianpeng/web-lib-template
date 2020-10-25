@@ -1,0 +1,21 @@
+.img {
+    width: 80%;
+    cursor: pointer;
+}
+
+.cursor {
+  border: 2px solid red;
+}
+
+::placeholder {
+  color: gray;
+}
+
+.image {
+  background-image: url("./static/size:2.4M.jpg");
+}
+@media (min-resolution: 2dppx) {
+  .image {
+    background-image: url("./static/size:2.4M.jpg");
+  }
+}

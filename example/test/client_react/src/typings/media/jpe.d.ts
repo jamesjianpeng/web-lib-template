@@ -1,1 +1,1 @@
-declare module "*.jpe"
+declare module "*.jpe";

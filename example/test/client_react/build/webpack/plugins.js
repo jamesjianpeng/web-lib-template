@@ -1,6 +1,8 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const PrettierPlugin = require("prettier-webpack-plugin");
+const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+
 const webpack = require("webpack");
 const { resolve } = require("../shared");
 const { getBusinessConfig } = require("../script/config");
@@ -25,6 +27,8 @@ const getHotModuleReplacementPlugin = () => new webpack.HotModuleReplacementPlug
 
 const getCleanWebpackPlugin = () => new CleanWebpackPlugin();
 
+const getReactRefreshPlugin = () => new ReactRefreshPlugin();
+
 const getPrettierPlugin = (opts) => new PrettierPlugin(opts);
 
 const getWebapckDefinePlugin = (opts) => {
@@ -35,19 +39,9 @@ const getWebapckDefinePlugin = (opts) => {
     return new webpack.DefinePlugin({ "process.env": res });
 };
 
-
-const devPlugins = [
-  getHotModuleReplacementPlugin(),
-  getPrettierPlugin(prettierConfig)
-];
-const prdPlugins = [
-  getCleanWebpackPlugin()
-];
-const webPlugins = [
-  getHTMLWebpackPlugin(HtmlConfig),
-  new webpack.NamedModulesPlugin(),
-  getWebapckDefinePlugin(getBusinessConfig())
-];
+const devPlugins = [getHotModuleReplacementPlugin(), getPrettierPlugin(prettierConfig), getReactRefreshPlugin()];
+const prdPlugins = [getCleanWebpackPlugin()];
+const webPlugins = [getHTMLWebpackPlugin(HtmlConfig), new webpack.NamedModulesPlugin(), getWebapckDefinePlugin(getBusinessConfig())];
 
 module.exports = {
     devPlugins,

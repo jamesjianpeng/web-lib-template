@@ -4,7 +4,7 @@
  */
 const { merge } = require("webpack-merge");
 const { devConf, devScript } = require("../webpack");
-
+console.log(devConf);
 const dev = () => devScript(devConf);
 
 module.exports = dev;

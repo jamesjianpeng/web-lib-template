@@ -7,7 +7,7 @@ const resolve = function (dir) {
     if (Array.isArray(dir)) {
         dir = dir.join("/");
     }
-    return path.join(__dirname, "../../", dir);
+    return path.join(process.cwd(), dir);
 };
 
 const resolveBuild = function (dir) {
