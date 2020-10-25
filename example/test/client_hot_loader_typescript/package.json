@@ -4,9 +4,10 @@
   "license": "MIT",
   "scripts": {
     "prettier": "node ./build --script prettier",
-    "prettier:buildfile": "prettier --config .prettierrc.json --write \"build/**/*.js\" --ignore-path \"./.prettierignore/\" ",
     "build": "node ./build --script prd --config ./env.json",
-    "start": "node ./build --script dev --env dev --config ./env.dev.json"
+    "start": "node ./build --script dev --env dev --config ./env.dev.json",
+    "build:debugger": "node ./build --script prd --debugger true --config ./env.json",
+    "start:debugger": "node ./build --script dev --debugger true --env dev --config ./env.dev.json"
   },
   "devDependencies": {
     "@hot-loader/react-dom": "^17.0.0",

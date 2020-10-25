@@ -1,7 +1,5 @@
-module.exports = ({ file, options, env }) => {
-  console.log(file)
-  console.log(options)
-  console.log(env)
+module.exports = (opts) => {
+  // const { file, mode } = opts
   return{
     plugins: [
       require('autoprefixer'),

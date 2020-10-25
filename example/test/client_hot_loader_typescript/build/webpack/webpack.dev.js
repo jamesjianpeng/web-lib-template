@@ -4,7 +4,11 @@
  */
 const config = require("./webpack.base");
 const { merge } = require("webpack-merge");
-const { resolve } = require("../shared");
+const { resolve, getArg } = require("../shared");
+const { DEBUGGER } = require('../constants')
+
+const isDebugger = getArg(DEBUGGER)
+
 module.exports = merge(config, {
     mode: "development",
     resolve: {
@@ -23,8 +27,8 @@ module.exports = merge(config, {
         host: "127.0.0.1",
         open: true,
         port: 3501,
-        // quiet: true, // 隐藏服务器控制台的信息输出
-        clientLogLevel: "error", // @link {https://webpack.docschina.org/configuration/dev-server/#devserverclientloglevel} 浏览器端的日志输出级别
+        quiet: !isDebugger, // 隐藏服务器控制台的信息输出
+        clientLogLevel:  isDebugger ? 'info' :"error", // @link {https://webpack.docschina.org/configuration/dev-server/#devserverclientloglevel} 浏览器端的日志输出级别
         /**
          *  historyApiFallback: {},
          */
